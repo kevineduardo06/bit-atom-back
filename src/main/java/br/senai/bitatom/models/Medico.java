@@ -1,11 +1,12 @@
 package br.senai.bitatom.models;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
-
 import lombok.Data;
 
 @Data
+@Entity(name="medico")
 public class Medico {
 	
 	@Id

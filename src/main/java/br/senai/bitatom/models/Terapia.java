@@ -1,13 +1,13 @@
 package br.senai.bitatom.models;
 
 import java.time.LocalDate;
-
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
-
 import lombok.Data;
 
-@Data 
+@Data
+@Entity(name="terapia")
 public class Terapia {
 	
 	@Id
