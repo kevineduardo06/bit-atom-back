@@ -2,20 +2,30 @@ package br.senai.bitatom.models;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 import lombok.Data;
+
 
 @Data
 public class Paciente {
 	
-	public Long id;
+	@Id
+	private Long id;
 	
-	public String nomePaciente;
-	public String email;
-	public String senha;
-	public char sexo;
-	public LocalDate idade;
-	
-	public Long id_medico;
+	@Column(name= "nome_paciente")
+	private String nomePaciente;
+	@Column(name="email")
+	private String email;
+	@Column(name="senha")
+	private String senha;
+	@Column(name="sexo")
+	private char sexo;
+	@Column(name="idade")
+	private LocalDate idade;
+	@Column(name="id_medico")
+	private Long idMedico;
 	
 	
 	
