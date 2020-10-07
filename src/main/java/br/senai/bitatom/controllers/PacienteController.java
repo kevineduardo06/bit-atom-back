@@ -21,7 +21,7 @@ public class PacienteController {
 	private PacienteRepository pacienteRepository;
 	
 	@GetMapping(path = "/paciente")
-	public List<Paciente> buscarPacientePorId(@PathVariable(name = "id", required = true) Long idPaciente ) {
+	public List<Paciente> buscarPacientePorId( ) {
 		return pacienteRepository.findAll();
 	}
 	

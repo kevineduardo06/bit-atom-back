@@ -19,7 +19,7 @@ public class TerapiaController {
 	private TerapiaRepository terapiaRepository;
 	
 	@GetMapping(path = "/terapia")
-	public List<Terapia> buscarTerapiaPorId(@PathVariable(name = "id", required = true) Long idTerapia ) {
+	public List<Terapia> buscarTerapiaPorId( ) {
 		return terapiaRepository.findAll();
 	}
 	

@@ -23,9 +23,13 @@ public class Medico implements Serializable{
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id;
 	
-	@Column(name="nome")
-	private String nome;
 	@Column(name="id_paciente")
 	private String idPaciente;
+	@Column(name="nome")
+	private String nome;
+	
+	
+	
+	
 
 }

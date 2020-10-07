@@ -18,7 +18,7 @@ import lombok.Data;
 @Table(name="paciente")
 public class Paciente implements Serializable{
 	
-	private static final long serialVersionUID = 2061438366242380079L;
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)

@@ -19,7 +19,7 @@ import lombok.Data;
 public class Medicamento implements Serializable{
 
 
-	private static final long serialVersionUID = 3430486560553342369L;
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private Long id;
