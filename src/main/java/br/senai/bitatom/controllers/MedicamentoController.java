@@ -24,6 +24,8 @@ public class MedicamentoController {
 	@Autowired
 	private MedicamentoRepository medicamentoRepository;
 	
+
+	
 	@GetMapping(path = "/medicamento")
 	public List<Medicamento> buscarMedicamento() {
 		return medicamentoRepository.findAll();
