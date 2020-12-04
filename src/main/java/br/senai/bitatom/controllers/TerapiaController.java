@@ -42,6 +42,7 @@ public class TerapiaController {
 	public void deleteTerapia(@PathVariable(name = "id", required = true) Long id) {
 		terapiaRepository.deleteById(id);
 	}
-	
+
+
 	
 }

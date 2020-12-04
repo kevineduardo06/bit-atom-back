@@ -1,6 +1,7 @@
 package br.senai.bitatom.models;
 
 import java.io.Serializable;
+import java.sql.Time;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -26,8 +27,24 @@ public class Terapia implements Serializable{
 	private LocalDate inicioTerapia;
 	@Column(name="fim_terapia")
 	private LocalDate fimTerapia;
-	@Column(name="id_medicamentos")
-	private Long idMedicamentos;
+	@Column(name="id_medicamento_um")
+	private Long idMedicamentoUm;
+	@Column(name="dose_um")
+	private int doseUm;
+	@Column(name="intervalo_um")
+	private Time intevaloUm;
+	@Column(name="intervalo_dois")
+	private Time intevaloDois;
+	@Column(name="intervalo_tres")
+	private Time intevaloTres;
+	@Column(name="id_medicamento_dois")
+	private Long idMedicamentoDois;
+	@Column(name="dose_dois")
+	private int doseDois;
+	@Column(name="id_medicamento_tres")
+	private Long idMedicamentoTres;
+	@Column(name="dose_tres")
+	private int doseTres;
 	@Column(name="id_paciente")
 	private Long idPaciente;
 	

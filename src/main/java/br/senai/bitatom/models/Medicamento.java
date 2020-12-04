@@ -25,14 +25,14 @@ public class Medicamento implements Serializable{
 	private Long id;
 	@Column(name="nome")
 	private String nome;
-	@Column(name="inicio_medicamento")
-	private LocalDate inicioMedicamento;
-	@Column(name="fim_medicamento")
-	private LocalDate fimMedicamento;
-	@Column(name="intervalo_tempo")
-	private LocalDateTime intervaloTempo;
-	@Column(name="dose")
-	private int dose;
+	@Column(name="sintoma_um")
+	private String sintomaUm;
+	@Column(name="sintoma_dois")
+	private String sintomaDois;
+	@Column(name="sintoma_tres")
+	private String sintomaTres;
+	@Column(name="id_paciente")
+	private Long idPaciente;
 	
 	
 }
