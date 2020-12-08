@@ -1,7 +1,6 @@
 package br.senai.bitatom.models;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -32,7 +31,7 @@ public class Paciente implements Serializable{
 	@Column(name="senha")
 	private String senha;
 	@Column(name="sexo")
-	private char sexo;
+	private String sexo;
 	@Column(name="data_nascimento")
 	private Date dataNascimento;
 

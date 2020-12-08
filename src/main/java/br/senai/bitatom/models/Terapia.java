@@ -3,6 +3,8 @@ package br.senai.bitatom.models;
 import java.io.Serializable;
 import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -19,49 +21,50 @@ public class Terapia implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
 
+    @Column(name= "nome")
+    private String nome;
+
     @Column(name = "inicio_terapia")
-    private LocalDate inicioTerapia;
+    private Date inicioTerapia;
 
     @Column(name = "fim_terapia")
-    private LocalDate fimTerapia;
+    private Date fimTerapia;
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "id_medicamento_um", referencedColumnName = "id")
-    private Medicamento medicamentoUm;
+   @Column(name="medicamento_um")
+   private String medicamentoUm;
 
     @Column(name = "dose_um")
     private int doseUm;
 
     @Column(name = "intervalo_um")
-    private Time intevaloUm;
+    private LocalTime intervaloUm;
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "id_medicamento_dois", referencedColumnName = "id")
-    private Medicamento medicamentoDois;
+    @Column(name="medicamento_dois")
+    private String medicamentoDois;
 
     @Column(name = "dose_dois")
     private int doseDois;
 
     @Column(name = "intervalo_dois")
-    private Time intevaloDois;
+    private LocalTime intervaloDois;
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "id_medicamento_tres", referencedColumnName = "id")
-    private Medicamento medicamentoTres;
+    @Column(name="medicamento_tres")
+    private String medicamentoTres;
 
     @Column(name = "dose_tres")
     private int doseTres;
 
     @Column(name = "intervalo_tres")
-    private Time intevaloTres;
+    private LocalTime intervaloTres;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "id_paciente", referencedColumnName = "id")
     private Paciente paciente;
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "id_medico", referencedColumnName = "id")
-    private Medico medico;
+//    @ManyToOne(cascade = CascadeType.REMOVE)
+//    @JoinColumn(name = "id_medico", referencedColumnName = "id")
+    @Column(name = "medico")
+    private String medico;
 
 
 

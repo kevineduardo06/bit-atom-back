@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import br.senai.bitatom.models.Paciente;
-import br.senai.bitatom.repository.PacienteRepository;
+
 
 
 @CrossOrigin
@@ -39,7 +39,7 @@ public class PacienteController {
 				orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
 	}
 
-	@PostMapping(value = "")
+	@PostMapping
 	public ResponseEntity<Paciente> salvar(@RequestBody Paciente paciente) {
 		paciente = this.pacienteService.salvar(paciente);
 		return new ResponseEntity<Paciente>(paciente, HttpStatus.OK);
