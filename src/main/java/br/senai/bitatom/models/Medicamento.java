@@ -31,8 +31,8 @@ public class Medicamento implements Serializable{
 	private String sintomaDois;
 	@Column(name="sintoma_tres")
 	private String sintomaTres;
-	@Column(name="id_paciente")
-	private Long idPaciente;
+
+
 	
 	
 }

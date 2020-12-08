@@ -35,10 +35,11 @@ public class Paciente implements Serializable{
 	private char sexo;
 	@Column(name="data_nascimento")
 	private Date dataNascimento;
-	@Column(name="id_medico")
-	private Long idMedico;
-	@Column(name="id_terapia")
-	private Long idTerapia;
+
+
+
+
+
 	
 	
 	

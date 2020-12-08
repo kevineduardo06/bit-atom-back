@@ -1,48 +1,63 @@
 package br.senai.bitatom.controllers;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
+
+import br.senai.bitatom.service.TerapiaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import br.senai.bitatom.models.Terapia;
 import br.senai.bitatom.repository.TerapiaRepository;
 
+@CrossOrigin
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/terapia")
 public class TerapiaController {
 
 	@Autowired
-	private TerapiaRepository terapiaRepository;
-	
-	@GetMapping(path = "/terapia")
-	public List<Terapia> buscarTerapiaPorId() {
-		return terapiaRepository.findAll();
-	}
-	
-	
-	@GetMapping(path = "/terapia/id/{id}")
-	public Optional<Terapia> buscarTerapia( @PathVariable(name = "id", required = true) Long id) {
-		return terapiaRepository.findById(id);
-	}
-	
-	@PostMapping(path = "/terapia/save")
-	public void salvarTerapia(@RequestBody Terapia terapia) {
-		terapiaRepository.save(terapia);
-	}
-	
-	@DeleteMapping(path = "/terapia/delete/id/{id}")
-	public void deleteTerapia(@PathVariable(name = "id", required = true) Long id) {
-		terapiaRepository.deleteById(id);
+	private TerapiaService terapiaService;
+
+	@GetMapping
+	public ResponseEntity<Collection<Terapia>> buscarTodos() {
+		Collection<Terapia> terapias = this.terapiaService.buscarTodos();
+
+		return new ResponseEntity<Collection<Terapia>>(terapias, HttpStatus.OK);
+
 	}
 
+
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<Terapia> buscaPorId(@PathVariable(value = "id") long id) {
+		Optional<Terapia> terapia = this.terapiaService.buscarPorId(id);
+		return terapia.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).
+				orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+	}
+
+	@PostMapping(value = "")
+	public ResponseEntity<Terapia> salvar(@RequestBody Terapia terapia) {
+		terapia = this.terapiaService.salvar(terapia);
+		return new ResponseEntity<Terapia>(terapia, HttpStatus.OK);
+	}
+
+	@PutMapping(value = "/{id}")
+	public ResponseEntity<Terapia> editar(@PathVariable(value = "id") long id, @RequestBody Terapia terapia) {
+
+		this.terapiaService.salvar(terapia);
+
+		return new ResponseEntity<Terapia>(terapia, HttpStatus.OK);
+	}
+
+	@DeleteMapping(value = "/{id}")
+	public ResponseEntity<Object> deletar(@PathVariable(value = "id") long id) {
+
+		this.terapiaService.delete(id);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
 
 	
 }
