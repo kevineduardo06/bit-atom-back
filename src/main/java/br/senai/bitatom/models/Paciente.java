@@ -21,7 +21,7 @@ public class Paciente implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name= "nome_paciente")
@@ -31,7 +31,7 @@ public class Paciente implements Serializable{
 	@Column(name="senha")
 	private String senha;
 	@Column(name="sexo")
-	private String sexo;
+	private Character sexo;
 	@Column(name="data_nascimento")
 	private Date dataNascimento;
 
