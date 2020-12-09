@@ -1,7 +1,6 @@
 package br.senai.bitatom.service;
 
-import br.senai.bitatom.models.Medicamento;
-import br.senai.bitatom.repository.MedicamentoRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.senai.bitatom.models.Terapia;
@@ -37,4 +36,5 @@ public class TerapiaService {
 		Optional<Terapia> terapia = this.terapiaRepository.findById(id);
 		terapia.ifPresent(value -> this.terapiaRepository.delete(value));
 	}
+
 }

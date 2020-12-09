@@ -30,8 +30,9 @@ public class Terapia implements Serializable {
     @Column(name = "fim_terapia")
     private Date fimTerapia;
 
-   @Column(name="medicamento_um")
-   private String medicamentoUm;
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "id_medicamentoUm", referencedColumnName = "id")
+   private Medicamento medicamentoUm;
 
     @Column(name = "dose_um")
     private int doseUm;
@@ -39,8 +40,9 @@ public class Terapia implements Serializable {
     @Column(name = "intervalo_um")
     private LocalTime intervaloUm;
 
-    @Column(name="medicamento_dois")
-    private String medicamentoDois;
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "id_medicamentoDois", referencedColumnName = "id")
+    private Medicamento medicamentoDois;
 
     @Column(name = "dose_dois")
     private int doseDois;
@@ -48,8 +50,9 @@ public class Terapia implements Serializable {
     @Column(name = "intervalo_dois")
     private LocalTime intervaloDois;
 
-    @Column(name="medicamento_tres")
-    private String medicamentoTres;
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "id_medicamentoTres", referencedColumnName = "id")
+    private Medicamento medicamentoTres;
 
     @Column(name = "dose_tres")
     private int doseTres;
@@ -61,10 +64,9 @@ public class Terapia implements Serializable {
     @JoinColumn(name = "id_paciente", referencedColumnName = "id")
     private Paciente paciente;
 
-//    @ManyToOne(cascade = CascadeType.REMOVE)
-//    @JoinColumn(name = "id_medico", referencedColumnName = "id")
-    @Column(name = "medico")
-    private String medico;
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "id_medico", referencedColumnName = "id")
+    private Medico medico;
 
 
 
