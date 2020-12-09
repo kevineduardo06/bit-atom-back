@@ -16,9 +16,7 @@ public class PacienteService {
 	private PacienteRepository pacienteRepository;
 
 
-	public Collection<Paciente> buscarTodos(){
-		return this.pacienteRepository.findAll();
-	}
+
 
 	public Optional<Paciente> buscarPorId(Long id){
 		return this.pacienteRepository.findById(id);
@@ -36,7 +34,11 @@ public class PacienteService {
 		paciente.ifPresent(value -> this.pacienteRepository.delete(value));
 	}
 	
-	
+	public Long logar(Paciente paciente){
+
+		Optional<Paciente> consultado = this.pacienteRepository.findByEmailAndSenha(paciente.getEmail(), paciente.getSenha());
+			return consultado.isPresent() ? consultado.get().getId() : null;
+	}
 
 	
 	

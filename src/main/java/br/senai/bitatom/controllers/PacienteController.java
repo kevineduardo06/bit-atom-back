@@ -23,13 +23,7 @@ public class PacienteController {
 	@Autowired
 	private PacienteService pacienteService;
 
-	@GetMapping
-	public ResponseEntity<Collection<Paciente>> buscarTodos() {
-		Collection<Paciente> pacientes = this.pacienteService.buscarTodos();
 
-		return new ResponseEntity<Collection<Paciente>>(pacientes, HttpStatus.OK);
-
-	}
 
 
 	@GetMapping(value = "/{id}")
@@ -59,4 +53,6 @@ public class PacienteController {
 		this.pacienteService.delete(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+
+
 }
