@@ -1,6 +1,7 @@
 package br.senai.bitatom.controllers;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -9,8 +10,15 @@ import org.springframework.scheduling.annotation.Scheduled;
 @EnableScheduling
 public class ScheduleInterval {
 
-//    @Scheduled(fixedRate = 2000L)
+//    @Autowired
+//    EnviaEmailController sendeMailService;
+//
+//
+//    public void testEnvioEmail() {
+//        sendeMailService.enviar();
+//    }
+//    @Scheduled(fixedRate = 20000L)
 //    void escrever(){
-//        System.out.println("Alguma mensagem");
+//            testEnvioEmail();
 //    }
 }
