@@ -27,9 +27,11 @@ public class Medico implements Serializable{
 
 	@Column(name="nome")
 	private String nome;
-	
-	
-	
-	
+
+	public Medico(){
+			}
+
+
+
 
 }

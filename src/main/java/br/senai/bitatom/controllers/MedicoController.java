@@ -29,7 +29,6 @@ public class MedicoController {
 
     }
 
-
     @GetMapping(value = "/{id}")
     public ResponseEntity<Medico> buscaPorId(@PathVariable(value = "id") long id) {
         Optional<Medico> medico = this.medicoService.buscarPorId(id);

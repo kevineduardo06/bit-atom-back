@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-
+import br.senai.bitatom.models.Receita;
 import br.senai.bitatom.service.TerapiaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -54,7 +54,7 @@ public class TerapiaController {
 	}
 
 	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<Object> deletar(@PathVariable(value = "id") long id) {
+	public ResponseEntity<Terapia> deletar(@PathVariable(value = "id") long id) {
 
 		this.terapiaService.delete(id);
 		return new ResponseEntity<>(HttpStatus.OK);

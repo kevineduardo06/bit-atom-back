@@ -1,7 +1,7 @@
 package br.senai.bitatom.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import java.util.List;
 import br.senai.bitatom.models.Medico;
 import br.senai.bitatom.repository.MedicoRepository;
 import org.springframework.stereotype.Service;
@@ -35,5 +35,6 @@ public class MedicoService {
 		Optional<Medico> medico = this.medicoRepository.findById(id);
 		medico.ifPresent(value -> this.medicoRepository.delete(value));
 	}
+
 
 }

@@ -25,14 +25,7 @@ public class Medicamento implements Serializable{
 	private Long id;
 	@Column(name="nome")
 	private String nome;
-	@Column(name="sintoma_um")
-	private String sintomaUm;
-	@Column(name="sintoma_dois")
-	private String sintomaDois;
-	@Column(name="sintoma_tres")
-	private String sintomaTres;
-
-
-	
+	@Column(name="observacao")
+	private String observacao;
 	
 }
