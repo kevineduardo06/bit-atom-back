@@ -1,9 +1,13 @@
 package br.senai.bitatom.models;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 
+import java.sql.Date;
+import java.sql.Time;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 
@@ -24,6 +28,7 @@ public class Receita {
     @Column(name = "dose")
     private int dose;
 
+    @DateTimeFormat(pattern = "HH:mm")
     @Column(name = "intervalo")
     private LocalTime intervalo;
 
@@ -34,6 +39,7 @@ public class Receita {
     public Receita(){}
 
     public Receita(Medicamento medicamento, int dose, LocalTime intervalo) {
+        super();
         this.medicamento = medicamento;
         this.dose = dose;
         this.intervalo = intervalo;

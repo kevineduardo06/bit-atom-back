@@ -28,6 +28,12 @@ public class ReceitaController {
 
     }
 
+    @GetMapping(value = "/home")
+    public List<Receita> buscarReceitas() {
+      return this.receitaService.buscarReceitas();
+
+    }
+
     @GetMapping(value = "/receitas/{id}")
     public List<Receita> buscarReceitasTerapia(@PathVariable(value = "id") long id){
         return this.receitaService.buscarReceitasTerapia(id);

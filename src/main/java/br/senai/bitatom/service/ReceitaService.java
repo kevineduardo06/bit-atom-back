@@ -21,6 +21,10 @@ public class ReceitaService {
         return this.receitaRepository.findAll();
     }
 
+    public List<Receita> buscarReceitas(){
+        return this.receitaRepository.buscarReceitas();
+    }
+
     public Optional<Receita> buscarPorId(Long id){
         return this.receitaRepository.findById(id);
     }
